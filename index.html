@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+     body {
+    background-image: url("t.jpg");
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+#btn1 {
+    background-color: #b55868;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: serif;
+    font-size: 20px;
+}
+
+#btn2 {
+    background-color: #b55868;
+    color: white;
+    border: none;
+    font-family: serif;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tt {
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid red;
+    box-shadow: 0px 4px 10px rgba(107, 7, 7, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.img-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.hh {
+    width: 200px; 
+    z-index: 1;
+}
+
+
+.vval-img {
+    position: absolute;
+    z-index: 2;
+    width: 180px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="tt" id="tt" style="width: 500px; height: 350px;">
+        
+        <div class="img-container">
+            <img class="hh" src="téléchargement.gif">
+            <img class="vval-img" src="vval.png">
+        </div>
+
+        <div class="btn-group">
+            <button id="btn1" style="width: 120px; height: 40px;">yes</button>
+            <button id="btn2" style="width: 120px; height: 40px;">no</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("btn1");
+    let b = document.getElementById("btn2");
+    let d = document.getElementById("tt");
+    
+    b.addEventListener("click" ,function(){
+        let curentw = parseInt(a.style.width);
+        let curenth = parseInt(a.style.height);
+        let curentt = parseInt(d.style.height);
+        
+        curenth += 20;
+        curentw += 40;
+        curentt += 20;
+        
+        a.style.width = curentw + "px";
+        a.style.height = curenth + "px";
+        d.style.height = curentt + "px";
+        
+        if (curentw >= 388){
+            b.style.display = "none";
+        }
+    })
+    a.addEventListener("click",function(){
+
+        d.innerHTML = `
+            <img src="tata.gif" style="width:250px;">
+        `;
+    });
+</script>
